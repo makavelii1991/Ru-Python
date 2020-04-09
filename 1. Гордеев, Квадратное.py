@@ -12,9 +12,8 @@ def cube(a,b,c):
         print("Korney net.")
     else:
         print(int(-b/2*a))
-    print()
+    print(a)
 
 cube(4,9,2)
 cube(1,2,1)
 cube(1,2,3)
-
