@@ -5,7 +5,7 @@ import telebot
 from telebot import types
 
 
-bot = telebot.TeleBot('1238053204:AAGaP8X6dt4HSyoA7PfbYtZdmv2JOoNutyg') #Телеграм токен
+bot = telebot.TeleBot('1238053204:AAH4Pq_s6GizEXaBVI1_Y60U-Ud73_LJcKY') #Телеграм токен
 adr = u"C:/Users/йцу/Desktop/forGit Project/03. FileManBot/cache/" #корень файлового менеджера
 class dir:
     def mkdir(name):
@@ -134,6 +134,9 @@ def askText(message):
         bot.send_message(message.chat.id, "Текст сохранен.")
     except PermissionError:
         bot.send_message(message.chat.id, "Ошибка доступа.")
+    except TypeError:
+        msg = bot.send_message(message.chat.id, 'Введите текст: ')
+        bot.register_next_step_handler(msg, askText)
 def rm(message):
     '''Удаление файла'''
     try:
